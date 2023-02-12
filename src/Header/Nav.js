@@ -1,27 +1,44 @@
 import React from 'react';
+import { useState } from 'react';
+
 import styles from './Nav.module.css';
 
-const Nav = () => {
+const Nav = (props) => {
+  const [toggleMenu, setToggleMenu] = useState('closed');
+
+  const openMenu = () => {
+    props.setPath('menu');
+    setToggleMenu('opened');
+  };
+
+  const closeMenu = () => {
+    props.setPath('main');
+    setToggleMenu('closed');
+  };
   return (
-    <div className={styles.navbar}>
-      <ul className={styles.menu}>
-        <li className={styles.logo}></li>
-      </ul>
-      <ul className={styles.menu}>
-        {/* <li className={styles.logo}></li> */}
-        <li className={styles.menuItem}>About</li>
-        <li className={styles.menuItem}>Racing</li>
-        <li className={styles.menuItem}>Regattas</li>
-        <li className={styles.menuItem}>Results</li>
-        <li className={styles.menuItem}>Calendar</li>
-        <li className={styles.menuItem}>Weather</li>
-        <li className={styles.menuItem}>Membership</li>
-        {/* <li>
-          <a class="social-link" href="https://www.facebook.com/FlaLMSA/">
-            <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
-          </a>
-        </li> */}
-      </ul>
+    <div className={styles.menuOpen}>
+      <div className={styles.navbar}>
+        <ul className={styles.menu}>
+          <div className={styles.navLeft}>
+            <li className={styles.logo}></li>
+            <li className={styles.mainTitle}>
+              LAKE MONROE SAILING ASSOCIATION
+            </li>
+            {/* <li className={styles.mainTitle}>Lake Monroe Sailing Association</li> */}
+          </div>
+
+          {toggleMenu === 'closed' && (
+            <li className={styles.menuItem} onClick={openMenu}>
+              MENU
+            </li>
+          )}
+          {toggleMenu === 'opened' && (
+            <li className={styles.menuItem} onClick={closeMenu}>
+              CLOSE
+            </li>
+          )}
+        </ul>
+      </div>
     </div>
   );
 };
