@@ -1,0 +1,14 @@
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+
+  font-size: 6rem;
+  /* font-weight: bold; */
+  color: #e7f5ff;
+}
