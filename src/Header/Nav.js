@@ -16,6 +16,11 @@ const Nav = () => {
         <li className={styles.menuItem}>Calendar</li>
         <li className={styles.menuItem}>Weather</li>
         <li className={styles.menuItem}>Membership</li>
+        {/* <li>
+          <a class="social-link" href="https://www.facebook.com/FlaLMSA/">
+            <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
+          </a>
+        </li> */}
       </ul>
     </div>
   );
