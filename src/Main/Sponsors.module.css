@@ -1,0 +1,25 @@
+.sponsorContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  opacity: 80%;
+}
+.sponsor {
+  height: 10rem;
+  filter: grayscale(2) brightness(1.2);
+  opacity: 90%;
+}
+.reg {
+  height: 10rem;
+  /* filter: brightness(0) invert(); */
+}
+.jameson {
+  height: 10rem;
+  filter: grayscale() brightness(1.2);
+}
+.vudu {
+  height: 10rem;
+  filter: invert() brightness(2);
+}

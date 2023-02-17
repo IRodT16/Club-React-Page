@@ -3,16 +3,18 @@ import { useState } from 'react';
 
 import styles from './Nav.module.css';
 
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+
 const Nav = (props) => {
   const [toggleMenu, setToggleMenu] = useState('closed');
 
   const openMenu = () => {
-    props.setPath('menu');
+    props.setMenu('menu');
     setToggleMenu('opened');
   };
 
   const closeMenu = () => {
-    props.setPath('main');
+    props.setMenu('close');
     setToggleMenu('closed');
   };
   return (
@@ -24,17 +26,16 @@ const Nav = (props) => {
             <li className={styles.mainTitle}>
               LAKE MONROE SAILING ASSOCIATION
             </li>
-            {/* <li className={styles.mainTitle}>Lake Monroe Sailing Association</li> */}
           </div>
 
           {toggleMenu === 'closed' && (
             <li className={styles.menuItem} onClick={openMenu}>
-              MENU
+              MENU <AiOutlineMenu />
             </li>
           )}
           {toggleMenu === 'opened' && (
             <li className={styles.menuItem} onClick={closeMenu}>
-              CLOSE
+              CLOSE <AiOutlineClose />
             </li>
           )}
         </ul>
