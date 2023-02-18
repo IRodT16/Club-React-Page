@@ -18,12 +18,21 @@ import Membership from '../Pages/Membership/Membership';
 export const Body = () => {
   const [path, setPath] = useState('about');
   const [menu, setMenu] = useState();
+  const [closeBtn, setCloseBtn] = useState(1);
+
+  const closeTrigger = () => {
+    setCloseBtn((i) => i + 1);
+    console.log(closeBtn);
+  };
+
   return (
     <div className={styles.body}>
-      <Nav setMenu={setMenu} menu={menu} />
+      <Nav setMenu={setMenu} menu={menu} closeBtn={closeBtn} />
 
       <Main />
-      {menu === 'menu' && <Menu setPath={setPath} setMenu={setMenu} />}
+      {menu === 'menu' && (
+        <Menu setPath={setPath} setMenu={setMenu} closeTrigger={closeTrigger} />
+      )}
       {path === 'about' && <About />}
       {path === 'racing' && <Racing />}
       {path === 'regatta' && <Regatta />}

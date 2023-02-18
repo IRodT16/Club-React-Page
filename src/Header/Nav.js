@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 import styles from './Nav.module.css';
@@ -7,6 +7,16 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 const Nav = (props) => {
   const [toggleMenu, setToggleMenu] = useState('closed');
+  console.log(toggleMenu);
+
+  useEffect(() => {
+    setToggleMenu('closed');
+    // if (props.closeBtn === 'opened') {
+    //   setToggleMenu('opened');
+    // } else if (props.closeBtn === 'closed') {
+    //   setToggleMenu('closed');
+    // }
+  }, [props.closeBtn]);
 
   const openMenu = () => {
     props.setMenu('menu');

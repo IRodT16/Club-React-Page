@@ -5,24 +5,37 @@ const Menu = (props) => {
   const aboutPage = () => {
     props.setPath('about');
     props.setMenu('closed');
+    props.closeTrigger();
   };
   const racingPage = () => {
     props.setPath('racing');
+    props.setMenu('closed');
+    props.closeTrigger();
   };
   const regattaPage = () => {
     props.setPath('regatta');
+    props.setMenu('closed');
+    props.closeTrigger();
   };
   const resultsPage = () => {
     props.setPath('results');
+    props.setMenu('closed');
+    props.closeTrigger();
   };
   const calendarPage = () => {
     props.setPath('calendar');
+    props.setMenu('closed');
+    props.closeTrigger();
   };
   const weatherPage = () => {
     props.setPath('weather');
+    props.setMenu('closed');
+    props.closeTrigger();
   };
   const membershipPage = () => {
     props.setPath('membership');
+    props.setMenu('closed');
+    props.closeTrigger();
   };
 
   return (
