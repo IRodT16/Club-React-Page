@@ -1,0 +1,18 @@
+.aboutContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.description {
+  font-size: 4.8rem;
+  color: white;
+  width: 24rem;
+  height: 24rem;
+  background-color: blue;
+}
+
+.slider {
+  background-color: aqua;
+  width: 24rem;
+  height: 24rem;
+}
