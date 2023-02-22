@@ -1,18 +1,14 @@
 .aboutContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
 .description {
-  font-size: 4.8rem;
-  color: white;
-  width: 24rem;
-  height: 24rem;
-  background-color: blue;
-}
-
-.slider {
-  background-color: aqua;
-  width: 24rem;
-  height: 24rem;
+  font-size: 2.4rem;
+  line-height: 2;
+  color: #e7f5ff;
+  width: 85rem;
 }

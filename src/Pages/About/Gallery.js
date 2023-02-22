@@ -1,49 +1,35 @@
 import styles from './Gallery.module.css';
+import SimpleImageSlider from 'react-simple-image-slider';
+
+import img1 from '../../Gallery/spinnaker.png';
+import img2 from '../../Gallery/cat22.jpg';
+import img3 from '../../Gallery/slider-1.png';
+import img4 from '../../Gallery/slider-2.png';
+import img5 from '../../Gallery/slider-3.png';
+import img6 from '../../Gallery/heel-sail.png';
+
+const images = [
+  { url: img1 },
+  { url: img2 },
+  { url: img3 },
+  { url: img4 },
+  { url: img5 },
+  { url: img6 },
+];
 
 function Gallery() {
   return (
     <div className={styles.galleryContainer}>
-      <img
-        class="slider-img slide-active"
-        src="img/cat22.jpg"
-        alt="Catalina 22 Rounding a Mark"
+      <SimpleImageSlider
+        width={750}
+        height={440}
+        images={images}
+        showBullets={true}
+        showNavs={true}
+        autoPlay={true}
+        slideDuration={1}
+        autoPlayDelay={6.0}
       />
-
-      <img
-        class="slider-img"
-        src="img/lightning-sail-1.png"
-        alt="Lightning sailboats"
-      />
-
-      <img class="slider-img" src="img/spinnaker.png" alt="Spinnakers" />
-
-      <img class="slider-img" src="img/heel-sail.png" alt="Boat heeling" />
-
-      <img class="slider-img" src="img/slider-1.png" alt="Boat heeling" />
-
-      <img class="slider-img" src="img/slider-2.png" alt="Boat heeling" />
-
-      <img class="slider-img" src="img/slider-3.png" alt="Boat heeling" />
-
-      <ion-icon
-        class="arrow arrow--right"
-        name="chevron-forward-outline"
-      ></ion-icon>
-
-      <ion-icon
-        class="arrow arrow--left"
-        name="chevron-back-outline"
-      ></ion-icon>
-
-      <div class="slider-nav">
-        <div class="slider-dot active"></div>
-        <div class="slider-dot"></div>
-        <div class="slider-dot"></div>
-        <div class="slider-dot"></div>
-        <div class="slider-dot"></div>
-        <div class="slider-dot"></div>
-        <div class="slider-dot"></div>
-      </div>
     </div>
   );
 }
