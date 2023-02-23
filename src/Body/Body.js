@@ -14,6 +14,7 @@ import Results from '../Pages/Results/Results';
 import Calendar from '../Pages/Calendar/Calendar';
 import Weather from '../Pages/Weather/Weather';
 import Membership from '../Pages/Membership/Membership';
+import MenuModal from '../Header/MenuModal';
 
 export const Body = () => {
   const [path, setPath] = useState('about');
@@ -25,14 +26,27 @@ export const Body = () => {
     console.log(closeBtn);
   };
 
+  const menuModalHandler = () => {
+    setMenu((prevState) => !prevState);
+  };
+
   return (
     <div className={styles.body}>
       <Nav setMenu={setMenu} menu={menu} closeBtn={closeBtn} />
 
       <Main />
+      {/* <MenuModal /> */}
       {menu === 'menu' && (
-        <Menu setPath={setPath} setMenu={setMenu} closeTrigger={closeTrigger} />
+        <MenuModal
+          setPath={setPath}
+          setMenu={setMenu}
+          closeTrigger={closeTrigger}
+          onExit={menuModalHandler}
+        />
       )}
+      {/* {menu === 'menu' && (
+        <Menu setPath={setPath} setMenu={setMenu} closeTrigger={closeTrigger} />
+      )} */}
       {path === 'about' && <About />}
       {path === 'racing' && <Racing />}
       {path === 'regatta' && <Regatta />}

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import styles from './Nav.module.css';
 
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 const Nav = (props) => {
   const [toggleMenu, setToggleMenu] = useState('closed');
@@ -11,11 +11,6 @@ const Nav = (props) => {
 
   useEffect(() => {
     setToggleMenu('closed');
-    // if (props.closeBtn === 'opened') {
-    //   setToggleMenu('opened');
-    // } else if (props.closeBtn === 'closed') {
-    //   setToggleMenu('closed');
-    // }
   }, [props.closeBtn]);
 
   const openMenu = () => {
@@ -23,10 +18,6 @@ const Nav = (props) => {
     setToggleMenu('opened');
   };
 
-  const closeMenu = () => {
-    props.setMenu('close');
-    setToggleMenu('closed');
-  };
   return (
     <div className={styles.menuOpen}>
       <div className={styles.navbar}>
@@ -38,16 +29,9 @@ const Nav = (props) => {
             </li>
           </div>
 
-          {toggleMenu === 'closed' && (
-            <li className={styles.menuItem} onClick={openMenu}>
-              MENU <AiOutlineMenu />
-            </li>
-          )}
-          {toggleMenu === 'opened' && (
-            <li className={styles.menuItem} onClick={closeMenu}>
-              CLOSE <AiOutlineClose />
-            </li>
-          )}
+          <li className={styles.menuItem} onClick={openMenu}>
+            MENU <AiOutlineMenu />
+          </li>
         </ul>
       </div>
     </div>

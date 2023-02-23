@@ -1,7 +1,7 @@
-import styles from './Page.module.css';
+import styles from './Racing.module.css';
 
 function Racing() {
-  return <div className={styles.generic}>Racing Page</div>;
+  return <div></div>;
 }
 
 export default Racing;

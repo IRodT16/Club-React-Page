@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './Menu.module.css';
 
+import { AiOutlineClose } from 'react-icons/ai';
+
 const Menu = (props) => {
+  const closeMenu = () => {
+    props.setMenu('closed');
+  };
   const aboutPage = () => {
     props.setPath('about');
     props.setMenu('closed');
@@ -42,6 +47,9 @@ const Menu = (props) => {
     <div className={styles.menuContainer}>
       <div className={styles.overlay}></div>
       <div className={styles.dropdownMenu}>
+        <div className={styles.close} onClick={closeMenu}>
+          CLOSE <AiOutlineClose />
+        </div>
         <ul className={styles.menu}>
           <li className={styles.menuItem} onClick={aboutPage}>
             About
