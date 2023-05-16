@@ -21,8 +21,8 @@ function Gallery() {
   return (
     <div className={styles.galleryContainer}>
       <SimpleImageSlider
-        width={750}
-        height={440}
+        width={500}
+        height={270}
         images={images}
         showBullets={true}
         showNavs={true}
